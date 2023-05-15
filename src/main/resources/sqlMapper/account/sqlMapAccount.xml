@@ -7,7 +7,7 @@
 
 <!--     &lt;!&ndash;   =====================================  2020-08-25 계정별 원장 조편백   시작 ====================================   &ndash;&gt;-->
 
-  <resultMap type="ledgerByAccountDTO" id="ledgerByAccountResult">
+  <resultMap type="com.project.Accounting.acc.accountledger.dto.LedgerByAccountDTO" id="ledgerByAccountResult">
         <result property="carryForward" column="CARRY_FORWARD"/>
 		<result property="reportingDate" column="REPORTING_DATE"/>
 		<result property="acctName" column="ACCT_NAME"/>
