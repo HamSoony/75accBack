@@ -129,13 +129,8 @@ public class SlipServiceFacadeImpl implements SlipServiceFacade {
 
     @Override
     public Slip SlipUpdate(Slip slip) {
-        slip.getJournals().forEach( journal -> {
 
-            JournalDetail journalDetail = journal.getJournalDetail();
-            journalDetailRepository.save(journalDetail);
-            journalRepository.save(journal);
 
-        });
         Slip save = slipRepository.save(slip);
 
         return save;

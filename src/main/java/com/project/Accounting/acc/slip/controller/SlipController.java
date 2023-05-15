@@ -108,6 +108,7 @@ public class SlipController {
     @PutMapping("/slip")
     public ResponseEntity<HashMap<String,Slip>> UpdateSlip(@RequestBody Slip slip){
         HashMap<String,Slip> map = new HashMap<>();
+        System.out.println("넘어온데이터 = "+ slip);
         try {
             Slip save = slipServiceFacade.SlipUpdate(slip);
             map.put("slip",save);
