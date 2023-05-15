@@ -65,22 +65,6 @@ public class SlipController {
 
     }
 
-    @GetMapping("/slip/{slipNo}")
-    public ResponseEntity<HashMap<String, Object> > Slips(@PathVariable String slipNo) {
-
-        Optional<Slip> slip = slipServiceFacade.getSlip(slipNo);
-
-        HashMap<String, Object> map = new HashMap<>();
-
-        if(slip.isEmpty()){
-            return ResponseEntity.notFound().build();
-        }
-
-        map.put("slip",slip);
-
-        return ResponseEntity.ok(map);
-
-    }
 
     @PostMapping("/slip")
     public ResponseEntity<String> registerSlip(@RequestBody Slip slip){
@@ -100,9 +84,36 @@ public class SlipController {
         return slipServiceFacade.findTodayslipsCount("a");
     }
 
+    @GetMapping("/slip/{SlipNo}")
+    public ResponseEntity<HashMap<String,Slip>> getSlipById(@PathVariable("SlipNo") String id){
+        HashMap<String, Slip> map = new HashMap<>();
+
+        Optional<Slip> slip = slipServiceFacade.getSlip(id);
+
+        if(slip.isEmpty()){
+            return ResponseEntity.badRequest().build();
+        }
+
+        map.put("slip", slip.get());
+
+        return ResponseEntity.ok(map);
+    }
+
     @GetMapping("/journals")
     public List<JournalDTO> Journals() {
         List<JournalDTO> journalList = journalServiceFacade.getJournalList();
         return journalList;
+    }
+
+    @PutMapping("/slip")
+    public ResponseEntity<HashMap<String,Slip>> UpdateSlip(@RequestBody Slip slip){
+        HashMap<String,Slip> map = new HashMap<>();
+        try {
+            Slip save = slipServiceFacade.SlipUpdate(slip);
+            map.put("slip",save);
+            return ResponseEntity.ok(map);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
     }
 }

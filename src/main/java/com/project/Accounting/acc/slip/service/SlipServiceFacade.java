@@ -18,4 +18,6 @@ public interface SlipServiceFacade {
 
     int findTodayslipsCount(String date);
 
+    Slip SlipUpdate(Slip slip);
+
 }

@@ -40,6 +40,8 @@ public class Journal {
 //    @JoinColumn(name = "cter_code")
     private String cterCode;
 
+    private String cterName;
+
     private Long leftDebtorPrice;
 
     private Long rightCreditsPrice;

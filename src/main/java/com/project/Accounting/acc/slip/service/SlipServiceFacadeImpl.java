@@ -5,6 +5,8 @@ import com.project.Accounting.acc.entity.menu.journal.Journal;
 import com.project.Accounting.acc.entity.menu.journal.JournalDetail;
 import com.project.Accounting.acc.entity.menu.journal.JournalDetailId;
 import com.project.Accounting.acc.slip.dto.SlipDTO;
+import com.project.Accounting.acc.slip.repository.JournalDetailRepository;
+import com.project.Accounting.acc.slip.repository.JournalRepository;
 import com.project.Accounting.acc.slip.repository.SlipRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
@@ -26,6 +28,12 @@ public class SlipServiceFacadeImpl implements SlipServiceFacade {
 
     @Autowired
     private final JournalDetailService journalDetailService;
+
+    @Autowired
+    private final JournalRepository journalRepository;
+
+    @Autowired
+    private final JournalDetailRepository journalDetailRepository;
 
     @Autowired
     private final EntityManager entityManager;
@@ -117,6 +125,20 @@ public class SlipServiceFacadeImpl implements SlipServiceFacade {
         int count = slipRepository.countSlipByReportingDate("2022-09-20");
 
         return count;
+    }
+
+    @Override
+    public Slip SlipUpdate(Slip slip) {
+        slip.getJournals().forEach( journal -> {
+
+            JournalDetail journalDetail = journal.getJournalDetail();
+            journalDetailRepository.save(journalDetail);
+            journalRepository.save(journal);
+
+        });
+        Slip save = slipRepository.save(slip);
+
+        return save;
     }
 
 
