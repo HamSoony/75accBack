@@ -1,5 +1,6 @@
 package com.project.Accounting.acc.entity.menu.journal;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.project.Accounting.acc.entity.menu.Slip;
 import jakarta.persistence.*;
@@ -18,11 +19,11 @@ public class Journal {
     private String id;
 
     @OneToOne(mappedBy = "id.journal",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("id")
     private JournalDetail journalDetail;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "slip_no")
+    @JsonIgnore
     private Slip slip;
 
     private String balanceDivision;
