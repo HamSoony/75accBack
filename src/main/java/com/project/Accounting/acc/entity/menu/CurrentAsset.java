@@ -1,8 +1,6 @@
 package com.project.Accounting.acc.entity.menu;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,7 +14,9 @@ public class CurrentAsset {
 
     private String acctName;
 
-    private String assetCode;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name ="asset_code")
+    private CurrentAssetDetail assetCode;
 
     private String assetName;
 
