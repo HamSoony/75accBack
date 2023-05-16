@@ -32,6 +32,7 @@ public class AccountLedgerController {
         HashMap<String, Object> param = new HashMap<>();
 
         HashMap<String, Object> resultMap = accountLedgerService.getLedgerbyAccountInfo(accountCode, startDate, endDate);
+        System.out.println("accountCode+startDate+ endDate ======================= " + accountCode + startDate + endDate);
 
 
         List<LedgerByAccountDTO> ledgerList= (List<LedgerByAccountDTO>) resultMap.get("RESULT");
