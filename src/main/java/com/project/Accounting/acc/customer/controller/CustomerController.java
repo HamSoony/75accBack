@@ -1,6 +1,7 @@
 package com.project.Accounting.acc.customer.controller;
 
 import com.project.Accounting.acc.customer.dto.CustomerCodeDto;
+import com.project.Accounting.acc.customer.dto.CustomerFindDTO;
 import com.project.Accounting.acc.customer.service.CustomerService;
 import com.project.Accounting.acc.entity.menu.Customer;
 import lombok.RequiredArgsConstructor;
@@ -38,8 +39,8 @@ public class CustomerController {
 
     //일반 거래처 조회
     @GetMapping("/customers")
-    public ResponseEntity<List<Customer>> getCustomers(){
-        List<Customer> customers = customerService.getCustomers();
+    public ResponseEntity<List<CustomerFindDTO>> getCustomers(){
+        List<CustomerFindDTO> customers = customerService.getCustomers();
 
         if(customers.size() == 0)
             return ResponseEntity.notFound().build();
