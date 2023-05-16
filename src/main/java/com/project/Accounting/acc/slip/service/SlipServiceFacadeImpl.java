@@ -5,6 +5,8 @@ import com.project.Accounting.acc.entity.menu.journal.Journal;
 import com.project.Accounting.acc.entity.menu.journal.JournalDetail;
 import com.project.Accounting.acc.entity.menu.journal.JournalDetailId;
 import com.project.Accounting.acc.slip.dto.SlipDTO;
+import com.project.Accounting.acc.slip.repository.JournalDetailRepository;
+import com.project.Accounting.acc.slip.repository.JournalRepository;
 import com.project.Accounting.acc.slip.repository.SlipRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
@@ -28,10 +30,19 @@ public class SlipServiceFacadeImpl implements SlipServiceFacade {
     private final JournalDetailService journalDetailService;
 
     @Autowired
+    private final JournalRepository journalRepository;
+
+    @Autowired
+    private final JournalDetailRepository journalDetailRepository;
+
+    @Autowired
     private final EntityManager entityManager;
 
 
 
+    /*
+    전표 연관관계 포함 전체 조회
+     */
     @Override
     public List<Slip> getSlipList() {
         List<Slip> slipList = slipRepository.findAllFetch();
@@ -39,6 +50,10 @@ public class SlipServiceFacadeImpl implements SlipServiceFacade {
 
         return slipList;
     }
+    
+    /*
+    전표만 조회
+     */
 
     @Override
     public List<SlipDTO> getOnlySlipList() {
@@ -47,6 +62,9 @@ public class SlipServiceFacadeImpl implements SlipServiceFacade {
     }
 
 
+    /*
+    전표번호로 조회
+     */
     @Override
     public Optional<Slip> getSlip(String slipId) {
         Optional<Slip> slip = slipRepository.findById(slipId);
@@ -55,6 +73,9 @@ public class SlipServiceFacadeImpl implements SlipServiceFacade {
         return slip;
     }
 
+    /*
+    전표 등록
+     */
     @Override
     public String registerSlip(Slip slipForm) {
 
@@ -110,6 +131,10 @@ public class SlipServiceFacadeImpl implements SlipServiceFacade {
 
         return slipNoResult;
     }
+    
+    /*
+    해당 날의 전표 갯수
+     */
 
     @Override
     public int findTodayslipsCount(String date){
@@ -117,6 +142,30 @@ public class SlipServiceFacadeImpl implements SlipServiceFacade {
         int count = slipRepository.countSlipByReportingDate("2022-09-20");
 
         return count;
+    }
+
+    /*
+    전표 업데이트
+     */
+    @Override
+    public Slip SlipUpdate(Slip slipForm) {
+
+
+        slipForm.getJournals().forEach( j -> {
+
+            j.setSlip(slipForm);
+            j.getJournalDetail().getId().setJournal(j);
+
+
+        });
+
+
+
+
+        Slip save = slipRepository.save(slipForm);
+
+        System.out.println("업데이트 후");
+        return save;
     }
 
 
