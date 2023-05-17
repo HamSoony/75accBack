@@ -1,9 +1,9 @@
 package com.project.Accounting.acc.customer.service;
 
 import com.project.Accounting.acc.customer.dto.CustomerCodeDto;
+import com.project.Accounting.acc.customer.dto.CustomerFindDTO;
 import com.project.Accounting.acc.customer.repository.CustomerRepository;
 import com.project.Accounting.acc.entity.menu.Customer;
-import com.project.Accounting.acc.entity.menu.account.Account;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,9 +29,11 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public List<Customer> getCustomers() {
+    public List<CustomerFindDTO> getCustomers() {
         List<Customer> customers = customerRepository.findAll();
-        return customers;
+        List<CustomerFindDTO> customerFindDTOS = customers.stream().map(CustomerFindDTO::new).collect(Collectors.toList());
+
+        return customerFindDTOS;
     }
 
     @Override

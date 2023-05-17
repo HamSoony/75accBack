@@ -1,17 +1,13 @@
 package com.project.Accounting.acc.entity.menu.journal;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.project.Accounting.acc.entity.menu.Slip;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.BatchSize;
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
 
-import java.util.List;
-import java.util.Set;
 
 @Entity
 @Getter
@@ -23,11 +19,11 @@ public class Journal {
     private String id;
 
     @OneToOne(mappedBy = "id.journal",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("id")
     private JournalDetail journalDetail;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "slip_no")
+    @JsonIgnore
     private Slip slip;
 
     private String balanceDivision;
@@ -39,6 +35,8 @@ public class Journal {
 //    @ManyToOne(fetch = FetchType.LAZY)
 //    @JoinColumn(name = "cter_code")
     private String cterCode;
+
+    private String cterName;
 
     private Long leftDebtorPrice;
 
