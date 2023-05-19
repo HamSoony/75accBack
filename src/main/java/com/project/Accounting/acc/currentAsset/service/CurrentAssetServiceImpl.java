@@ -15,20 +15,23 @@ public class CurrentAssetServiceImpl implements CurrentAssetService {
     @Autowired
     private final CurrentAssetRepository currentAssetRepository;
 
+//    @Override
+//    public List<CurrentAsset> getCurrentAssetByAcctCode(String acctCode) {
+//        List<CurrentAsset> currentAssetByAcctCode = currentAssetRepository.findCurrentAssetByAcctCode(acctCode);
+//        return currentAssetByAcctCode;
+//    }
+//
     @Override
-    public List<CurrentAsset> getCurrentAssetsByAcctCode(String acctCode) {
-        List<CurrentAsset> currentAssetByAcctCode = currentAssetRepository.findCurrentAssetByAcctCode(acctCode);
-        return currentAssetByAcctCode;
-    }
-
-    public List<CurrentAsset> getCurrentAssetsByAcctName(String acctName) {
-        List<CurrentAsset> currentAssetByAcctName = currentAssetRepository.findCurrentAssetByAcctName(acctName);
-        return currentAssetByAcctName;
-
-    }
+    public List<CurrentAsset> getCurrentAssetByAssetName(String assetName) {
+        List<CurrentAsset> currentAssetName = currentAssetRepository.findCurrentAssetByAssetName(assetName);
+        return currentAssetName;
+}
 
     public List<CurrentAsset> findAll(){
         List<CurrentAsset> list = currentAssetRepository.findAll();
         return list;
     }
+
+
+
 }

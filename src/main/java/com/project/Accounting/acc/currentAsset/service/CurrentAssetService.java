@@ -5,8 +5,8 @@ import com.project.Accounting.acc.entity.menu.CurrentAsset;
 import java.util.List;
 
 public interface CurrentAssetService {
-    List<CurrentAsset> getCurrentAssetsByAcctCode(String acctCode);
-    List<CurrentAsset> getCurrentAssetsByAcctName(String acctName);
+//    List<CurrentAsset> getCurrentAssetByAcctCode(String acctCode);
 
     List<CurrentAsset> findAll();
+    List<CurrentAsset> getCurrentAssetByAssetName(String assetName);
 }
