@@ -32,8 +32,6 @@ public class Journal {
 
     private String acctName;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "cter_code")
     private String cterCode;
 
     private String cterName;
@@ -41,12 +39,6 @@ public class Journal {
     private Long leftDebtorPrice;
 
     private Long rightCreditsPrice;
-
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "account_inner_code")
-//    private Account account;
-
-
 
 
 }

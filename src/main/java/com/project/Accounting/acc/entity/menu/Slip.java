@@ -19,16 +19,9 @@ public class Slip {
     @Column(name = "slip_no")
     private String id;
 
-
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    private Department deptCode;
-
-    //별칭 문제 때문에 String으로 둠
     private String deptCode;
 
     @OneToMany(mappedBy = "slip", cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("slip") // 양방향 참조 무시
-    @Fetch(value = FetchMode.SUBSELECT)
     private List<Journal> journals;
 
     private String slipType;
@@ -45,16 +38,10 @@ public class Slip {
 
     private String approvalDate;
 
-
     private String slipDescription;
 
     private String slipStatus;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "accountPeriodNo")
-//    private Period period;
-
-    //별칭 문제 때문에 String으로 둠
     private String acctPeriodNo;
 
 

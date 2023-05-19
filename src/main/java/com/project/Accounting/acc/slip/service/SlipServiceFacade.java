@@ -20,4 +20,10 @@ public interface SlipServiceFacade {
 
     Slip SlipUpdate(Slip slip);
 
+    List<SlipDTO> getNoneApproveSlipList();
+
+    List<String> ApproveSlip(List<String> idList);
+
+    List<String> rejectSlip(List<String> idList);
+
 }
