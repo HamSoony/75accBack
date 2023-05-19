@@ -9,10 +9,10 @@ import java.util.List;
 @Repository
 public interface CurrentAssetRepository extends JpaRepository<CurrentAsset, String> {
 
-    List<CurrentAsset> findCurrentAssetByAcctCode(String acctCode);
-    List<CurrentAsset> findCurrentAssetByAcctName(String acctName);
+//    List<CurrentAsset> findCurrentAssetByAcctCode(String acctCode);
+
 
     List<CurrentAsset> findAll();
 
-    
+    List<CurrentAsset> findCurrentAssetByAssetName(String assetName);
 }
