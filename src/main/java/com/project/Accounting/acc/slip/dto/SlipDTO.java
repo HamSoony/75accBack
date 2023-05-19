@@ -58,4 +58,7 @@ public class SlipDTO {
                 this.slipStatus = slipStatus;
                 this.acctPeriodNo = acctPeriodNo;
     }
+
+    protected SlipDTO() {
+    }
 }

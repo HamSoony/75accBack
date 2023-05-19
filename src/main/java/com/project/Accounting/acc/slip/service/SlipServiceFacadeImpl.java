@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @Data
@@ -89,6 +90,7 @@ public class SlipServiceFacadeImpl implements SlipServiceFacade {
         String slipNoResult = slipNo.toString();
 
         slipForm.setId(slipNoResult);
+        slipForm.setSlipStatus("대기");
 
 
         slipForm.getJournals().forEach( journal -> {
@@ -166,6 +168,39 @@ public class SlipServiceFacadeImpl implements SlipServiceFacade {
 
         System.out.println("업데이트 후");
         return save;
+    }
+
+    @Override
+    public List<SlipDTO> getNoneApproveSlipList() {
+        List<SlipDTO> onlySlipList = slipRepository.findOnlySlipList();
+        List<SlipDTO> filterList = onlySlipList.stream().filter(slip -> slip.getSlipStatus().contains("대기")).toList();
+        System.out.println("filterList = " + filterList);
+
+        return filterList;
+    }
+
+    @Override
+    public List<String> ApproveSlip(List<String> idList) {
+        List<Slip> slips = slipRepository.findByIdIn(idList);
+
+        slips.stream().forEach( slip -> slip.setSlipStatus("승인완료"));
+
+        List<String> slipIdList = slips.stream().map(slip -> slip.getId()).collect(Collectors.toList());
+
+        return slipIdList;
+    }
+
+    @Override
+    public List<String> rejectSlip(List<String> idList) {
+
+        List<Slip> slips = slipRepository.findByIdIn(idList);
+
+        slips.stream().forEach( slip -> slip.setSlipStatus("반려"));
+
+        List<String> slipIdList = slips.stream().map(slip -> slip.getId()).collect(Collectors.toList());
+
+        return slipIdList;
+
     }
 
 
