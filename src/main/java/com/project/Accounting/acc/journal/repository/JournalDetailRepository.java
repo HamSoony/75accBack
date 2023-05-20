@@ -1,4 +1,4 @@
-package com.project.Accounting.acc.slip.repository;
+package com.project.Accounting.acc.journal.repository;
 
 import com.project.Accounting.acc.entity.menu.journal.JournalDetail;
 import com.project.Accounting.acc.entity.menu.journal.JournalDetailId;

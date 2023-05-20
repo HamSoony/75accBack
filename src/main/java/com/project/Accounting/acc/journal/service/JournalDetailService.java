@@ -1,4 +1,4 @@
-package com.project.Accounting.acc.slip.service;
+package com.project.Accounting.acc.journal.service;
 
 import com.project.Accounting.acc.entity.menu.journal.JournalDetail;
 import org.springframework.stereotype.Service;
