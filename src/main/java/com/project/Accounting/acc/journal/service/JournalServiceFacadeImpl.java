@@ -1,8 +1,7 @@
-package com.project.Accounting.acc.slip.service;
+package com.project.Accounting.acc.journal.service;
 
-import com.project.Accounting.acc.entity.menu.journal.Journal;
-import com.project.Accounting.acc.slip.dto.JournalDTO;
-import com.project.Accounting.acc.slip.repository.JournalRepository;
+import com.project.Accounting.acc.journal.dto.JournalDTO;
+import com.project.Accounting.acc.journal.repository.JournalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

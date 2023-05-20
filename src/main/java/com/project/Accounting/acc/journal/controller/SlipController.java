@@ -1,9 +1,9 @@
-package com.project.Accounting.acc.slip.controller;
+package com.project.Accounting.acc.journal.controller;
 
 import com.project.Accounting.acc.entity.menu.Slip;
 import com.project.Accounting.acc.journal.dto.JournalDTO;
-import com.project.Accounting.acc.slip.dto.SlipDTO;
 import com.project.Accounting.acc.journal.service.JournalServiceFacade;
+import com.project.Accounting.acc.slip.dto.SlipDTO;
 import com.project.Accounting.acc.slip.service.SlipServiceFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
