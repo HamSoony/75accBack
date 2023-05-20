@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface JournalRepository extends JpaRepository<Journal, String> {
 
-    @Query("SELECT new com.project.Accounting.acc.slip.dto.JournalDTO(" +
+    @Query("SELECT new com.project.Accounting.acc.journal.dto.JournalDTO(" +
             "j.id, " +
             "j.slip.id, " +
             "j.balanceDivision, " +
