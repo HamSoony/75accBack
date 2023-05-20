@@ -95,11 +95,6 @@ public class SlipController {
         return ResponseEntity.ok(map);
     }
 
-    @GetMapping("/journals")
-    public List<JournalDTO> Journals() {
-        List<JournalDTO> journalList = journalServiceFacade.getJournalList();
-        return journalList;
-    }
 
     @PutMapping("/slip")
     public ResponseEntity<HashMap<String,Slip>> UpdateSlip(@RequestBody Slip slip){
