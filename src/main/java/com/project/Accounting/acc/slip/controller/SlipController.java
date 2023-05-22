@@ -1,6 +1,7 @@
 package com.project.Accounting.acc.slip.controller;
 
 import com.project.Accounting.acc.entity.menu.Slip;
+import com.project.Accounting.acc.entity.menu.journal.Journal;
 import com.project.Accounting.acc.journal.dto.JournalDTO;
 import com.project.Accounting.acc.slip.dto.SlipDTO;
 import com.project.Accounting.acc.journal.service.JournalServiceFacade;
@@ -144,5 +145,7 @@ public class SlipController {
         return ResponseEntity.ok(map);
 
     }
+
+
 
 }

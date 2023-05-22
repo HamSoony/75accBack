@@ -26,4 +26,5 @@ public interface SlipServiceFacade {
 
     List<String> rejectSlip(List<String> idList);
 
+
 }

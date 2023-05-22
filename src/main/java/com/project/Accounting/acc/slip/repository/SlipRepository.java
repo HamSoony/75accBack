@@ -4,6 +4,7 @@ import com.project.Accounting.acc.entity.menu.Slip;
 import com.project.Accounting.acc.slip.dto.SlipDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +36,6 @@ public interface SlipRepository extends JpaRepository<Slip, String> {
     int countSlipByReportingDate(String date);
 
     List<Slip> findByIdIn(List<String> idList);
-
 
 
     
