@@ -49,7 +49,7 @@ public class AccountLedgerController {
     //총계정원장
     @GetMapping("/accountledgerlist")
     public ResponseEntity<ArrayList<GeneralAccountLedgerDTO>> findGeneralAccountLedgerList(@RequestParam("startDate") String fromDate,
-                                                                                            @RequestParam("endDate") String toDate) {
+                                                                                           @RequestParam("endDate") String toDate) {
 
         ArrayList<GeneralAccountLedgerDTO> generalAccountLedgerList = accountLedgerService.findGeneralAccountLedgerList(fromDate, toDate);
         if (generalAccountLedgerList.size() == 0) {

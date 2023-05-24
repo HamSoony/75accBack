@@ -1,7 +1,5 @@
-//package com.project.Accounting.entity.menu.budget;
+//package com.project.Accounting.acc.entity.menu.budget;
 //
-//import com.project.Accounting.entity.menu.Department;
-//import com.project.Accounting.entity.menu.period.Period;
 //import jakarta.persistence.*;
 //import lombok.Getter;
 //import lombok.Setter;
@@ -14,9 +12,8 @@
 //@Table(name ="Budget")
 //public class Budget {
 //
-//    @EmbeddedId
-//    private BudgetID id;
-//
+//    @Id
+//    private BudgetID Id;
 //
 //    private Long m1Budget;
 //
