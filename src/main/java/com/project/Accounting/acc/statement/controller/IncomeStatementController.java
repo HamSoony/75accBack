@@ -1,13 +1,11 @@
 package com.project.Accounting.acc.statement.controller;
 
-import com.project.Accounting.acc.statement.dto.TotalTrialBalanceDTO;
+
 import com.project.Accounting.acc.statement.service.IncomeStatementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 
 @CrossOrigin("*")
@@ -39,7 +37,7 @@ public class IncomeStatementController {
 //        System.out.println("손익계산서 "+ searchDate);
 //        try{
 //            HashMap<String, Object> resultMap = incomeStatementService.getIncomeStatement(searchDate);
-//            ArrayList<TotalTrialBalanceDTO> result= (ArrayList<TotalTrialBalanceDTO>)resultMap.get("RESULT");
+//            ArrayList<IncomeStatementDTO> result= (ArrayList<IncomeStatementDTO>)resultMap.get("RESULT");
 //            param.put("incomeList", result);
 //            return ResponseEntity.ok(param);
 //        }catch (Exception ex){
