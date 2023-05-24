@@ -2,7 +2,9 @@ package com.project.Accounting.acc.statement.dto;
 
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
+@EqualsAndHashCode(callSuper=false)
 @Data
 public class CashFlowListDTO {
     private String accountInnerCode;

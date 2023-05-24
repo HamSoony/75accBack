@@ -19,15 +19,14 @@ public class CashFlowStatementController {
     private CashFlowListService cashFlowListService;
 
     @GetMapping( "/cashFlowStatements")
-    public ResponseEntity<HashMap<String, Object>> getCashFlowStatement(@RequestParam("searchDate") String toDate) {
+    public ResponseEntity<HashMap<String, Object>> getCashFlowList(@RequestParam("searchDate") String toDate) {
 
-        System.out.println("toDate: " + toDate);
         HashMap<String, Object> param = new HashMap<>();
         try {
 
             HashMap<String, Object> resultMap = cashFlowListService.getCashFlowList(toDate);
-            ArrayList<CashFlowListDTO> result= (ArrayList<CashFlowListDTO>)resultMap.get("RESULT");
-            param.put("cashFlowList",result);
+            System.out.println("resultMap: " + resultMap);
+            param.put("cashFlowList",resultMap.get("RESULT"));
             return ResponseEntity.ok(param);
 
         } catch (Exception e) {
