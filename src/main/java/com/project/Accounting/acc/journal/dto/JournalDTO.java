@@ -1,4 +1,4 @@
-package com.project.Accounting.acc.slip.dto;
+package com.project.Accounting.acc.journal.dto;
 
 
 import lombok.Data;

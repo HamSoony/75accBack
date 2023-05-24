@@ -19,11 +19,11 @@
         <parameter property="RESULT" jdbcType="CURSOR" javaType="java.sql.ResultSet" mode="OUT" resultMap="totalTrialBalanceResult"/>
     </parameterMap>
     
-    <parameterMap id="addEarlyStatementsParams" type="java.util.HashMap">
-        <parameter property="toDate" jdbcType="VARCHAR" javaType="String" mode="IN"/>
-        <parameter property="ERROR_CODE" jdbcType="DECIMAL" javaType="int" mode="OUT"/>
-        <parameter property="ERROR_MSG" jdbcType="VARCHAR" javaType="String" mode="OUT"/>
-    </parameterMap>
+<!--    <parameterMap id="addEarlyStatementsParams" type="java.util.HashMap">-->
+<!--        <parameter property="toDate" jdbcType="VARCHAR" javaType="String" mode="IN"/>-->
+<!--        <parameter property="ERROR_CODE" jdbcType="DECIMAL" javaType="int" mode="OUT"/>-->
+<!--        <parameter property="ERROR_MSG" jdbcType="VARCHAR" javaType="String" mode="OUT"/>-->
+<!--    </parameterMap>-->
 
    <select id="callTotalTrialBalance" parameterMap="totalTrialBalanceParams" statementType="CALLABLE" >
    			<![CDATA[
@@ -31,9 +31,9 @@
    			]]>   									 
     </select>
     
-    <select id="addEarlyStatements" parameterMap="addEarlyStatementsParams" statementType="CALLABLE"> 
-      <![CDATA[
-        {call P_COMPUTE_EARLY_STATEMENTS(?,?,?)}
-    ]]>   
-    </select>
+<!--    <select id="addEarlyStatements" parameterMap="addEarlyStatementsParams" statementType="CALLABLE">-->
+<!--      <![CDATA[-->
+<!--        {call P_COMPUTE_EARLY_STATEMENTS(?,?,?)}-->
+<!--    ]]>-->
+<!--    </select>-->
 </mapper>

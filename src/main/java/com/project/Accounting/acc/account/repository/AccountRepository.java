@@ -12,8 +12,4 @@ public interface AccountRepository extends JpaRepository<Account,String> {
 
     List<Account> findAccountsByAcctName(String acctName);
 
-
-
-
-
 }

@@ -28,21 +28,20 @@ public class CurrentAssetController {
         return list;
     }
 
-    @GetMapping("/findAssetByCodeList/{acctCode}")
-    public List<CurrentAsset> getCurrentAssetCodeNameList(@PathVariable("acctCode") String acctCode) {
-
-        List<CurrentAsset> currentAssetsByAcctCode = currentAssetService.getCurrentAssetsByAcctCode(acctCode);
-
-        return currentAssetsByAcctCode;
+    @GetMapping("/findAssetName")
+    public List<CurrentAsset> getCurrentAssetName(@RequestParam String assetName){
+        List<CurrentAsset> currentAssetName = currentAssetService.getCurrentAssetByAssetName(assetName);
+        return currentAssetName;
     }
+//    @GetMapping("/findAssetByCodeList/{acctCode}")
+//    public List<CurrentAsset> getCurrentAssetCodeNameList(@PathVariable("acctCode") String acctCode) {
+//
+//        List<CurrentAsset> currentAssetByAcctCode = currentAssetService.getCurrentAssetByAcctCode(acctCode);
+//
+//        return currentAssetByAcctCode;
+//    }
+//
 
-    @GetMapping("/findAssetNameList/{acctName}")
-    public List<CurrentAsset> getCurrentAssetNameList(@PathVariable("acctName") String acctName) {
-
-        List<CurrentAsset> currentAssetsByAcctName = currentAssetService.getCurrentAssetsByAcctName(acctName);
-
-        return currentAssetsByAcctName;
-    }
 
     @GetMapping("/assetDetailList/")
     public List<CurrentAssetDetail> getAll() {

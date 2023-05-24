@@ -2,9 +2,9 @@ package com.project.Accounting.acc.slip.controller;
 
 import com.project.Accounting.acc.entity.menu.Slip;
 import com.project.Accounting.acc.entity.menu.journal.Journal;
-import com.project.Accounting.acc.slip.dto.JournalDTO;
+import com.project.Accounting.acc.journal.dto.JournalDTO;
 import com.project.Accounting.acc.slip.dto.SlipDTO;
-import com.project.Accounting.acc.slip.service.JournalServiceFacade;
+import com.project.Accounting.acc.journal.service.JournalServiceFacade;
 import com.project.Accounting.acc.slip.service.SlipServiceFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -99,11 +96,6 @@ public class SlipController {
         return ResponseEntity.ok(map);
     }
 
-    @GetMapping("/journals")
-    public List<JournalDTO> Journals() {
-        List<JournalDTO> journalList = journalServiceFacade.getJournalList();
-        return journalList;
-    }
 
     @PutMapping("/slip")
     public ResponseEntity<HashMap<String,Slip>> UpdateSlip(@RequestBody Slip slip){
@@ -115,4 +107,45 @@ public class SlipController {
             return ResponseEntity.ok(map);
 
     }
+
+    @GetMapping("/slipsApprove")
+    public ResponseEntity<HashMap<String,List<SlipDTO>>> GetNoneApproveSlip(){
+        HashMap<String, List<SlipDTO>> map = new HashMap<>();
+        List<SlipDTO> slipList = slipServiceFacade.getNoneApproveSlipList();
+
+        map.put("slip",slipList);
+        return ResponseEntity.ok(map);
+
+    }
+
+    @PutMapping("/slipsApprove")
+    public ResponseEntity<HashMap<String,List<String>>> approveSlip(@RequestBody ArrayList<String> list){
+        HashMap<String, List<String>> map = new HashMap<>();
+
+        System.out.println("list = " + list);
+
+        List<String> slipsId = slipServiceFacade.ApproveSlip(list);
+
+
+        map.put("list",slipsId);
+        return ResponseEntity.ok(map);
+
+    }
+
+    @PutMapping("/slipsReject")
+    public ResponseEntity<HashMap<String,List<String>>> rejectSlip(@RequestBody ArrayList<String> list){
+        HashMap<String, List<String>> map = new HashMap<>();
+
+        System.out.println("list = " + list);
+
+        List<String> slipsId = slipServiceFacade.rejectSlip(list);
+
+
+        map.put("list",slipsId);
+        return ResponseEntity.ok(map);
+
+    }
+
+
+
 }
