@@ -12,6 +12,10 @@ public class FinancialPositionDTO {
     private int balanceDetail;
     private int balanceSummary;
     private int periodNo;
-    private int acctCode;
+    private String acctCode;
+
+//    private int prebalancesummary;
+//
+//    private int prebalancedetail;
 
 }

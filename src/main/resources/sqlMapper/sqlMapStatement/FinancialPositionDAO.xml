@@ -11,6 +11,8 @@
         <result property="balanceSummary" column="BALANCE_SUMMARY"/>
         <result property="periodNo" column="PERIOD_NO"/>
         <result property="acctCode" column="ACCT_CODE"/>
+<!--        <result property="prebalancedetail" column="PRE_BALANCE_DETAIL"/>-->
+<!--        <result property="prebalancesummary" column="PRE_BALANCE_SUMMARY"/>-->
     </resultMap>
 
     <parameterMap id="financialPositionParams" type="java.util.HashMap">

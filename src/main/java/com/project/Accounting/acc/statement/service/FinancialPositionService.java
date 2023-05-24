@@ -4,4 +4,6 @@ import java.util.HashMap;
 
 public interface FinancialPositionService {
     HashMap<String, Object> callFinancialPosition(String toDate);
+
+
 }
