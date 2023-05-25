@@ -31,6 +31,12 @@ public class SlipDTO {
 
     private String acctPeriodNo;
 
+    private String cterCode;
+
+    private String cterName;
+
+
+
 
     public SlipDTO(
             String slipNo,
@@ -44,7 +50,8 @@ public class SlipDTO {
             String approvalDate,
             String slipDescription,
             String slipStatus,
-            String acctPeriodNo) {
+            String acctPeriodNo
+    ) {
                 this.id = slipNo;
                 this.deptCode = deptCode;
                 this.slipType = slipType;
