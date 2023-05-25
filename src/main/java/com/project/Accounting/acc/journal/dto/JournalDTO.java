@@ -24,6 +24,7 @@ public class JournalDTO {
 
     private Long rightCreditsPrice;
 
+
     public JournalDTO(String journalNo, String slipNo, String balanceDivision, String acctInnerCode, String acctName, String cterCode, Long leftDebtorPrice, Long rightCreditsPrice) {
         this.journalNo = journalNo;
         this.slipNo = slipNo;
