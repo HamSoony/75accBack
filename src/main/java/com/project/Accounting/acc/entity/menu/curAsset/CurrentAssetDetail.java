@@ -1,4 +1,4 @@
-package com.project.Accounting.acc.entity.menu;
+package com.project.Accounting.acc.entity.menu.curAsset;
 
 import jakarta.persistence.*;
 import lombok.Getter;

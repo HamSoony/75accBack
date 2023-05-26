@@ -25,6 +25,8 @@ public class JournalReportingDateDTO {
 
         private String expenseReport;
 
+        private String cterName;
+
         public JournalReportingDateDTO(String journalNo,
                           String slipNo,
                           String balanceDivision,
@@ -34,7 +36,8 @@ public class JournalReportingDateDTO {
                           Long leftDebtorPrice,
                           Long rightCreditsPrice,
                           String reportingDate,
-                          String expenseReport
+                          String expenseReport,
+                          String cterName
                           ) {
             this.journalNo = journalNo;
             this.slipNo = slipNo;
@@ -46,6 +49,7 @@ public class JournalReportingDateDTO {
             this.rightCreditsPrice = rightCreditsPrice;
             this.reportingDate = reportingDate;
             this.expenseReport = expenseReport;
+            this.cterName = cterName;
         }
 
 
