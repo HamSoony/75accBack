@@ -36,7 +36,8 @@ public interface JournalRepository extends JpaRepository<Journal, String> {
             "j.leftDebtorPrice, " +
             "j.rightCreditsPrice, " +
             "j.slip.reportingDate, " +
-            "j.slip.expenseReport) " +
+            "j.slip.expenseReport," +
+            "j.cterName) " +
             "FROM Journal j " +
             "WHERE j.slip.reportingDate BETWEEN :startDate AND :endDate")
     List<JournalReportingDateDTO> findBySlipReportingDateBetween2(@Param("startDate") String startDate, @Param("endDate") String endDate);
