@@ -1,21 +1,20 @@
 package com.project.Accounting.acc.statement.dto;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
-@EqualsAndHashCode(callSuper=false)
+
 @Data
 public class FinancialPositionDTO {
-    private int lev;
+    private long lev;
     private String category;
     private String acctName;
-    private int balanceDetail;
-    private int balanceSummary;
-    private int periodNo;
+    private long balanceDetail;
+    private long balanceSummary;
+    private long periodNo;
     private String acctCode;
 
-//    private int prebalancesummary;
+    private long prebalancesummary;
 //
-//    private int prebalancedetail;
+    private long prebalancedetail;
 
 }
