@@ -40,7 +40,7 @@
     <select id="saveBudget" parameterType="com.project.Accounting.acc.budget.dto.BudgetDto">
     <![CDATA[
         INSERT INTO BUDGET(DEPT_CODE, WORKPLACE_CODE, ACCT_INNER_CODE, ACCT_PERIOD_NO, BUDGETING_CODE, M1_BUDGET, M2_BUDGET, M3_BUDGET,M4_BUDGET, M5_BUDGET, M6_BUDGET, M7_BUDGET, M8_BUDGET, M9_BUDGET, M10_BUDGET, M11_BUDGET, M12_BUDGET)
-        VALUES(#{deptCode}, #{workplaceCode}, #{acctInnerCode}, #{acctPeriodNo}, 1, #{m1Budget}, #{m2Budget}, #{m3Budget}, #{m4Budget}, #{m5Budget}, #{m6Budget}, #{m7Budget}, #{m8Budget}, #{m9Budget}, #{m10Budget}, #{m11Budget}, #{m12Budget})
+        VALUES(#{deptCode}, #{workplaceCode}, #{acctInnerCode}, #{acctPeriodNo}, #{budgetingCode}, #{m1Budget}, #{m2Budget}, #{m3Budget}, #{m4Budget}, #{m5Budget}, #{m6Budget}, #{m7Budget}, #{m8Budget}, #{m9Budget}, #{m10Budget}, #{m11Budget}, #{m12Budget})
         ]]>
     </select>
 </mapper>

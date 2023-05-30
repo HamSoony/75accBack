@@ -22,7 +22,6 @@ public class AccountLedgerController {
     @Autowired
     private AccountLedgerService accountLedgerService;
 
-
     //계정별원장조회
     @GetMapping( "/{accountCode}")
     public ResponseEntity<HashMap<String, Object>> getLedgerbyAccountInfo(@PathVariable String accountCode,

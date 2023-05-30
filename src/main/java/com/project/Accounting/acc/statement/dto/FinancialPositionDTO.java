@@ -6,12 +6,12 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper=false)
 @Data
 public class FinancialPositionDTO {
-    private int lev;
+    private String lev;
     private String category;
     private String acctName;
-    private int balanceDetail;
-    private int balanceSummary;
-    private int periodNo;
-    private int acctCode;
+    private String balanceDetail;
+    private String balanceSummary;
+    private String periodNo;
+    private String acctCode;
 
 }
