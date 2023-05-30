@@ -1,5 +1,6 @@
 package com.project.Accounting.acc.statement.controller;
 
+import com.project.Accounting.acc.statement.dto.DetailTrialBalanceDTO;
 import com.project.Accounting.acc.statement.dto.FinancialPositionDTO;
 import com.project.Accounting.acc.statement.dto.TotalTrialBalanceDTO;
 import com.project.Accounting.acc.statement.service.FinancialPositionService;
@@ -21,15 +22,15 @@ public class FinancialPositionController {
     private FinancialPositionService financialPositionService;
 
     @GetMapping("/financialPositions")
-    public ResponseEntity<HashMap<String, Object>> callFinancialPosition(@RequestParam("searchDate") String toDate) {
+    public ResponseEntity<HashMap<String, Object>> getFinancialPosition(@RequestParam("searchDate") String toDate) {
 
         System.out.println(".컨트롤러 날짜"+toDate);
 
         HashMap<String, Object> param = new HashMap<>();
         try{
-            HashMap<String, Object> resultMap = financialPositionService.callFinancialPosition(toDate);
-            ArrayList<FinancialPositionDTO> result= (ArrayList<FinancialPositionDTO>)resultMap.get("RESULT");
-            param.put("financialPositions", result);
+            param = financialPositionService.getFinancialPosition(toDate);
+//            ArrayList<FinancialPositionDTO> result= (ArrayList<FinancialPositionDTO>)resultMap.get("RESULT");
+//            param.put("financialPositions", result);
             return ResponseEntity.ok(param);
         }catch (Exception ex){
             return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
@@ -38,4 +39,20 @@ public class FinancialPositionController {
 
 
     }
+
+//    @GetMapping("/financialPositions")
+//    public ResponseEntity<HashMap<String, Object>> callFinancialPosition(
+//            @RequestParam("searchDate") String toDate) {
+//        HashMap<String, Object> param = new HashMap<>();
+//        try {
+//            HashMap<String, Object>  result= financialPositionService.callFinancialPosition(toDate);
+//            param.put("costList", result.get("RESULT"));
+//                return ResponseEntity.status(HttpStatus.NO_CONTENT).body(param);
+//            } catch(Exception ex){
+//                return ResponseEntity.noContent().build();
+//            }
+//        }
+//    }
+
+
 }
