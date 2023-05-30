@@ -1,6 +1,7 @@
 package com.project.Accounting.acc.entity.menu;
 
 import com.project.Accounting.hr.workplace.entity.Workplace;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,6 +13,7 @@ public class Customer {
 
     @Id
     @Column(name = "cter_code")
+    @Schema(description = "고객코드")
     private String id;
     private String wpCode;
 
