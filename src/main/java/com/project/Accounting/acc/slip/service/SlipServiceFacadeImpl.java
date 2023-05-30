@@ -135,17 +135,7 @@ public class SlipServiceFacadeImpl implements SlipServiceFacade {
         return slipNoResult;
     }
     
-    /*
-    해당 날의 전표 갯수
-     */
 
-    @Override
-    public int findTodayslipsCount(String date){
-
-        int count = slipRepository.countSlipByReportingDate("2022-09-20");
-
-        return count;
-    }
 
     /*
     전표 업데이트
