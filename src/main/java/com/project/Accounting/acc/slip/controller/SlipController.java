@@ -6,11 +6,13 @@ import com.project.Accounting.acc.journal.dto.JournalDTO;
 import com.project.Accounting.acc.slip.dto.SlipDTO;
 import com.project.Accounting.acc.journal.service.JournalServiceFacade;
 import com.project.Accounting.acc.slip.service.SlipServiceFacade;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.*;
 
@@ -113,6 +115,9 @@ public class SlipController {
         HashMap<String, List<SlipDTO>> map = new HashMap<>();
         List<SlipDTO> slipList = slipServiceFacade.getNoneApproveSlipList();
 
+        if(slipList.isEmpty()){
+            return ResponseEntity.badRequest().build();
+        }
         map.put("slip",slipList);
         return ResponseEntity.ok(map);
 
@@ -142,6 +147,17 @@ public class SlipController {
 
 
         map.put("list",slipsId);
+        return ResponseEntity.ok(map);
+
+    }
+
+    @GetMapping("/slipTest")
+    public ResponseEntity<HashMap<String,Slip>> SlipTest(@RequestParam String id){
+        HashMap<String, Slip> map = new HashMap<>();
+
+        Slip byId = slipServiceFacade.findById(id);
+
+        map.put("list",byId);
         return ResponseEntity.ok(map);
 
     }

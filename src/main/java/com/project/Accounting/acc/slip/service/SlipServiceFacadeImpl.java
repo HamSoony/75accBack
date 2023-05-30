@@ -204,7 +204,13 @@ public class SlipServiceFacadeImpl implements SlipServiceFacade {
 
     }
 
+    @Override
+    public Slip findById(String id) {
+        Optional<Slip> slip = slipRepository.findById(id);
 
+        Slip slip1 = slip.get();
+        return slip1;
+    }
 
 
 }
