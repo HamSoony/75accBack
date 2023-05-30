@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Data
 public class FinancialPositionDTO {
+
     private long lev;
     private String category;
     private String acctName;
@@ -16,5 +17,6 @@ public class FinancialPositionDTO {
     private long prebalancesummary;
 //
     private long prebalancedetail;
+
 
 }
