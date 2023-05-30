@@ -26,8 +26,8 @@ public class AccountLedgerController {
     //계정별원장조회
     @GetMapping( "/{accountCode}")
     public ResponseEntity<HashMap<String, Object>> getLedgerbyAccountInfo(@PathVariable String accountCode,
-                                                                          @RequestParam("startDate") String startDate
-            , @RequestParam("endDate") String endDate) {
+                                                                          @RequestParam("startDate") String startDate,
+                                                                          @RequestParam("endDate") String endDate) {
 
         HashMap<String, Object> param = new HashMap<>();
 
