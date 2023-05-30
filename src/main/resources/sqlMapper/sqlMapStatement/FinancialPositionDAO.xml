@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><!--Converted at: Wed Feb 26 09:48:33 KST 2020-->
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.Accounting.acc.statement.dao.FinancialPositionDAO">
 
@@ -34,10 +34,11 @@
    			]]>
     </select>
 
-<!--   <select id="addEarlyStatements" parameterMap="addEarlyStatementsParams" statementType="CALLABLE">&ndash;&gt;-->
-<!--      <![CDATA[&ndash;&gt;-->
-<!--        {call P_COMPUTE_EARLY_STATEMENTS(?,?,?)}&ndash;&gt;-->
-<!--    ]]>&ndash;&gt;-->
-<!--    </select>&ndash;&gt;-->
 
+<!--    <select id="addEarlyStatements" parameterMap="addEarlyStatementsParams" statementType="CALLABLE">-->
+<!--      <![CDATA[-->
+<!--        {call P_COMPUTE_EARLY_STATEMENTS(?,?,?)}-->
+<!--    ]]>-->
+<!--    </select>-->
 </mapper>
+
