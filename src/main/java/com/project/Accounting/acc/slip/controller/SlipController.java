@@ -7,6 +7,8 @@ import com.project.Accounting.acc.slip.dto.SlipDTO;
 import com.project.Accounting.acc.journal.service.JournalServiceFacade;
 import com.project.Accounting.acc.slip.service.SlipServiceFacade;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,6 +22,7 @@ import java.util.*;
 @RequiredArgsConstructor
 @RequestMapping("/acc/account/")
 @CrossOrigin("*")
+@Tag(name = "전표", description = "전표 관련 API입니다.")
 public class SlipController {
 
     @Autowired
@@ -29,6 +32,7 @@ public class SlipController {
     private final JournalServiceFacade journalServiceFacade;
 
     @GetMapping("/slips")
+    @Operation(summary = "전표 전체 조회", description = "연관관계 포함 전표 조회입니다.")
     public ResponseEntity<Map<String,Object>> Slips() {
 
         HashMap<String, Object> map = new HashMap<>();
@@ -47,6 +51,7 @@ public class SlipController {
     }
 
     @GetMapping("/onlyslips")
+    @Operation(summary = "전표만 전체 조회", description = "전표만 전체 조회입니다.")
     public ResponseEntity<Map<String,Object>> onlySlips() {
 
         HashMap<String, Object> map = new HashMap<>();
@@ -66,6 +71,7 @@ public class SlipController {
 
 
     @PostMapping("/slip")
+    @Operation(summary = "전표 등록", description = "연관관계 포함해서 전표를 등록하는 메서드")
     public ResponseEntity<String> registerSlip(@RequestBody Slip slip){
         System.out.println("@RequestBody="+slip );
         try {
@@ -77,13 +83,10 @@ public class SlipController {
     }
 
 
-    @GetMapping("/count")
-    public int count(){
 
-        return slipServiceFacade.findTodayslipsCount("a");
-    }
 
     @GetMapping("/slip/{SlipNo}")
+    @Operation(summary = "전표 번호로 전표 단일 조회")
     public ResponseEntity<HashMap<String,Slip>> getSlipById(@PathVariable("SlipNo") String id){
         HashMap<String, Slip> map = new HashMap<>();
 
@@ -100,6 +103,7 @@ public class SlipController {
 
 
     @PutMapping("/slip")
+    @Operation(summary = "전표 수정")
     public ResponseEntity<HashMap<String,Slip>> UpdateSlip(@RequestBody Slip slip){
         HashMap<String,Slip> map = new HashMap<>();
         System.out.println("넘어온데이터 = "+ slip);
@@ -111,6 +115,7 @@ public class SlipController {
     }
 
     @GetMapping("/slipsApprove")
+    @Operation(summary = "승인 전표 조회")
     public ResponseEntity<HashMap<String,List<SlipDTO>>> GetNoneApproveSlip(){
         HashMap<String, List<SlipDTO>> map = new HashMap<>();
         List<SlipDTO> slipList = slipServiceFacade.getNoneApproveSlipList();
@@ -124,6 +129,7 @@ public class SlipController {
     }
 
     @PutMapping("/slipsApprove")
+    @Operation(summary = "전표 승인 처리")
     public ResponseEntity<HashMap<String,List<String>>> approveSlip(@RequestBody ArrayList<String> list){
         HashMap<String, List<String>> map = new HashMap<>();
 
@@ -138,6 +144,7 @@ public class SlipController {
     }
 
     @PutMapping("/slipsReject")
+    @Operation(summary = "전표 반려 처리")
     public ResponseEntity<HashMap<String,List<String>>> rejectSlip(@RequestBody ArrayList<String> list){
         HashMap<String, List<String>> map = new HashMap<>();
 
