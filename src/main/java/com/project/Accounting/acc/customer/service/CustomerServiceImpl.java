@@ -32,6 +32,7 @@ public class CustomerServiceImpl implements CustomerService {
     public List<CustomerFindDTO> getCustomers() {
         List<Customer> customers = customerRepository.findAll();
         List<CustomerFindDTO> customerFindDTOS = customers.stream().map(CustomerFindDTO::new).collect(Collectors.toList());
+        //customer -> new CustomerFindDTO(customer)
 
         return customerFindDTOS;
     }
