@@ -13,10 +13,10 @@ import org.springframework.context.annotation.Configuration;
 public class OpenApiConfig {
 
     @Bean
-    public OpenAPI openAPI(@Value("${springdoc.version}") String springdocVersion) {
+    public OpenAPI openAPI() {
         Info info = new Info()
                 .title("75기 vue acc")
-                .version(springdocVersion)
+                .version("springdocVersion")
                 .description("각자 만든 Controller에 내용 추가해주세요");
 
         return new OpenAPI()

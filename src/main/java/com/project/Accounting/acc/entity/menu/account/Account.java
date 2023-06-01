@@ -7,11 +7,12 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Data
-public class Account {
+public class Account implements Serializable {
     @Id
     @Column(name = "acct_inner_code")
     private String id;
