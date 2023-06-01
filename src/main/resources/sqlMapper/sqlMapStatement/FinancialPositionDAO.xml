@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><!--Converted at: Wed Feb 26 09:48:33 KST 2020-->
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.project.Accounting.acc.statement.dao.FinancialPositionDAO">
+<mapper namespace="com.project.Accounting.acc.statement.FinancialPosition.dao.FinancialPositionDAO">
 
-    <resultMap id="financialPositionResult" type="com.project.Accounting.acc.statement.dto.FinancialPositionDTO">
+    <resultMap id="financialPositionResult" type="com.project.Accounting.acc.statement.FinancialPosition.dto.FinancialPositionDTO">
         <result property="lev" column="LEV"/>
         <result property="category" column="CATEGORY"/>
         <result property="acctName" column="ACCT_NAME"/>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><!--Converted at: Wed Feb 26 09:48:31 KST 2020-->
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.project.Accounting.acc.statement.dao.DetailTrialBalanceDAO">
+<mapper namespace="com.project.Accounting.acc.statement.DetailTrialBalance.dao.DetailTrialBalanceDAO">
 
     <!-- ///////////////////////// 2020-08-24 김진호 수정 /////////////////////////// -->
-    <resultMap id="detaillTrialBalanceResult" type="com.project.Accounting.acc.statement.dto.DetailTrialBalanceDTO">
+    <resultMap id="detaillTrialBalanceResult" type="com.project.Accounting.acc.statement.DetailTrialBalance.dto.DetailTrialBalanceDTO">
         <result property="lev" column="lev"/>
         <result property="accountInnerCode" column="accountinnercode"/>
         <result property="debitsSum" column="debitssum"/>

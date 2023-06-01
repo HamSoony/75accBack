@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><!--Converted at: Wed Feb 26 09:48:30 KST 2020-->
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.project.Accounting.acc.statement.dao.CashJournalDAO">
+<mapper namespace="com.project.Accounting.acc.statement.CashJournal.dao.CashJournalDAO">
 
-    <resultMap id="cashJournalResult" type="com.project.Accounting.acc.statement.dto.CashJournalDTO">
+    <resultMap id="cashJournalResult" type="com.project.Accounting.acc.statement.CashJournal.dto.CashJournalDTO">
         <result property="monthReportingDate" column="monthreportingdate"/>
         <result property="reportingDate" column="reportingdate"/>
         <result property="expenseReport" column="expensereport"/>
@@ -14,7 +14,7 @@
         <result property="balance" column="BALANCE"/>
     </resultMap>
 
-    <select id="selectCashJournalList" parameterType="string" resultType="com.project.Accounting.acc.statement.dto.CashJournalDTO">
+    <select id="selectCashJournalList" parameterType="string" resultType="com.project.Accounting.acc.statement.CashJournal.dto.CashJournalDTO">
         <!-- ************************ 2020.08.24 정대현 수정 ********************** -->
         <![CDATA[
 SELECT CASE

@@ -7,7 +7,7 @@
 		See console output for further details
 	-->
 
-    <resultMap id="cashFlowStatementResult" type="com.project.Accounting.acc.statement.dto.CashFlowListDTO">
+    <resultMap id="cashFlowStatementResult" type="com.project.Accounting.acc.statement.CashFlowStatement.dto.CashFlowListDTO">
         <result property="accountInnerCode" column="ACCT_INNER_CODE"/>
         <result property="accountName" column="ACCT_NAME"/>
         <result property="parentAccountCode" column="PARENT_ACCT_CODE"/>
