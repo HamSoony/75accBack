@@ -7,7 +7,14 @@ import java.util.List;
 public interface CurAssetService {
 
     List<CurAsset> findAll();
+
     List<CurAsset> getCurAssetByAssetName(String assetName);
+
     void saveAsset(CurAsset asset);
 
+    List<CurAsset> getCurAssetByDepartment(String department);
+
+    List<CurAsset> getCurAssetByProgress(String progress);
+
+    List<CurAsset> getCurAssetByAcctCode(String acctCode);
 }

@@ -30,4 +30,22 @@ public class CurAssetServiceImpl implements CurAssetService {
     public void saveAsset(CurAsset asset){
         curAssetRepository.save(asset);
     }
+
+    @Override
+    public List<CurAsset> getCurAssetByDepartment(String department) {
+        List<CurAsset> dept = curAssetRepository.findCurAssetByDepartment( department );
+        return dept;
+    }
+
+    @Override
+    public List<CurAsset> getCurAssetByProgress(String progress) {
+        List<CurAsset> prog = curAssetRepository.findCurAssetByProgress(progress);
+        return prog;
+    }
+
+    @Override
+    public List<CurAsset> getCurAssetByAcctCode(String acctCode) {
+        List<CurAsset> acode = curAssetRepository.findCurAssetByAcctCode(acctCode);
+        return acode;
+    }
 }

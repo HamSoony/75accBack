@@ -9,5 +9,12 @@ import java.util.List;
 @Repository
 public interface CurAssetRepository extends JpaRepository<CurAsset, String> {
     List<CurAsset> findAll();
+
     List<CurAsset> findCurAssetByAssetName(String assetName);
+
+    List<CurAsset> findCurAssetByDepartment(String department);
+
+    List<CurAsset> findCurAssetByProgress(String progress);
+
+    List<CurAsset> findCurAssetByAcctCode(String acctCode);
 }
