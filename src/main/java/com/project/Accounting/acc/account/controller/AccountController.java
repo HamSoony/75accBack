@@ -37,4 +37,21 @@ public class AccountController {
     }
 
 
+    @GetMapping("/between")
+    public ResponseEntity<Map<String, Object>> getAccountBetweenId(@RequestParam String start,@RequestParam String end) {
+        Map<String,Object> map = new HashMap<>();
+
+        List<AccountCodeDto> accountList = accountService.getAccountCodeBetweenId(start,end);
+
+        if(accountList.size() == 0)
+            return ResponseEntity.notFound().build();
+
+
+        map.put("accountList",accountList);
+
+        return ResponseEntity.ok(map);
+
+    }
+
+
 }

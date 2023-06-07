@@ -23,11 +23,27 @@ public class AccountServiceImpl implements AccountService{
 
         List<Account> accountList = accountRepository.findAll();
 
-        List<AccountCodeDto> dto = accountList.stream().map(AccountCodeDto::new).collect(Collectors.toList());
+
+        List<AccountCodeDto> dto = accountList.stream()
+                .filter((account -> !account.getAcctName().contains("사용자")))
+                .map(AccountCodeDto::new)
+                .collect(Collectors.toList());
 
         return dto;
     }
 
+    @Override
+    public List<AccountCodeDto> getAccountCodeBetweenId(String start, String end) {
+
+        List<Account> accountsByIdBetween = accountRepository.findAccountsByIdBetween(start, end);
+
+        List<AccountCodeDto> dto = accountsByIdBetween.stream()
+                .filter((account -> !account.getAcctName().contains("사용자")&&account.getParentAcctInnerCode()!=null))
+                .map(AccountCodeDto::new)
+                .collect(Collectors.toList());
+
+        return dto;
+    }
 
 
 }

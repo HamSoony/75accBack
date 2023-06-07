@@ -8,5 +8,7 @@ import java.util.List;
 public interface AccountService {
     List<AccountCodeDto> getAccountCodeNameList();
 
+    List<AccountCodeDto> getAccountCodeBetweenId(String start, String end);
+
 
 }

@@ -74,6 +74,7 @@ public class SlipController {
     @Operation(summary = "전표 등록", description = "연관관계 포함해서 전표를 등록하는 메서드")
     public ResponseEntity<String> registerSlip(@RequestBody Slip slip){
         System.out.println("@RequestBody="+slip );
+        System.out.println("carName="+slip.getJournals().get(0).getJournalDetail().getCarName() );
         try {
             String slipNumber = slipServiceFacade.registerSlip(slip);
             return ResponseEntity.ok(slipNumber);

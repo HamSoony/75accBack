@@ -26,6 +26,9 @@ public class JournalDetail {
     private String carName;
     private String description;
 
+    private String acctCode;
+    private String acctName;
+
 
 
 }
