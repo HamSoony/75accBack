@@ -21,6 +21,9 @@ public class JournalDetail {
     private String deptName;
 
     private String acctControlCode;
+
+    private String carNumber;
+    private String carName;
     private String description;
 
 

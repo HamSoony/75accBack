@@ -120,9 +120,6 @@ public class SlipController {
         HashMap<String, List<SlipDTO>> map = new HashMap<>();
         List<SlipDTO> slipList = slipServiceFacade.getNoneApproveSlipList();
 
-        if(slipList.isEmpty()){
-            return ResponseEntity.badRequest().build();
-        }
         map.put("slip",slipList);
         return ResponseEntity.ok(map);
 

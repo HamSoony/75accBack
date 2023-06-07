@@ -164,6 +164,7 @@ public class SlipServiceFacadeImpl implements SlipServiceFacade {
     @Override
     public List<SlipDTO> getNoneApproveSlipList() {
         List<SlipDTO> onlySlipList = slipRepository.findOnlySlipList();
+
         List<SlipDTO> filterList = onlySlipList.stream().filter(slip -> slip.getSlipStatus().contains("대기")).toList();
         System.out.println("filterList = " + filterList);
 
