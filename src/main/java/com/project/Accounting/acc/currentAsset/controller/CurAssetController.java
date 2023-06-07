@@ -33,4 +33,22 @@ public class CurAssetController {
         curAssetService.saveAsset(asset);
     }
 
+    @GetMapping("/findDepartment")
+    public List<CurAsset> getDepartment(@RequestParam String department){
+        List<CurAsset> dept = curAssetService.getCurAssetByDepartment(department);
+        return dept;
+    }
+
+    @GetMapping("/findProgress")
+    public List<CurAsset> getProgress(@RequestParam String progress){
+        List<CurAsset> prog= curAssetService.getCurAssetByProgress(progress);
+        return prog;
+    }
+
+    @GetMapping("/findAcctCode")
+    public List<CurAsset> getAcctCode(@RequestParam String acctCode){
+        List<CurAsset> acode = curAssetService.getCurAssetByAcctCode(acctCode);
+        return acode;
+    }
+
 }
