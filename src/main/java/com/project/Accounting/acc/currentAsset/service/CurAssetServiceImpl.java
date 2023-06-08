@@ -6,6 +6,7 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Hashtable;
 import java.util.List;
 
 @Service
@@ -14,11 +15,13 @@ public class CurAssetServiceImpl implements CurAssetService {
     @Autowired
     private final CurAssetRepository curAssetRepository;
 
+
     @Override
     public List<CurAsset> findAll() {
         List<CurAsset> list = curAssetRepository.findAll();
         return list;
     }
+
 
     @Override
     public List<CurAsset> getCurAssetByAssetName(String assetName) {
