@@ -23,11 +23,13 @@ public class BudgetController {
 
 
     @GetMapping("/pybudgetstatus")
-    public ResponseEntity<HashMap<String, Object>> getPreviousYearBudgetStatus(@RequestParam String deptCode,
-                                                                                              @RequestParam String reportDate,
-                                                                                              @RequestParam String acctInnerCode){
+    public ResponseEntity<HashMap<String, Object>> getPreviousYearBudgetStatus(
+            @RequestParam String deptCode,
+            @RequestParam String reportDate,
+            @RequestParam String acctInnerCode){
 
-        HashMap<String, Object> previousYearBudgetStatus = budgetService.getPreviousYearBudgetStatus(deptCode, reportDate, acctInnerCode);
+        HashMap<String, Object> previousYearBudgetStatus
+                = budgetService.getPreviousYearBudgetStatus(deptCode, reportDate, acctInnerCode);
 
 
         if(previousYearBudgetStatus.size() == 0){
