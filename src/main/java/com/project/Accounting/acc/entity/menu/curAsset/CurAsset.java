@@ -27,5 +27,11 @@ public class CurAsset {
     private String month;
     private String amorFinYear;
     private String depExpense;
+    private String valuToBook;
+    private String accDepLastYear;
+    private String lastYearBookValue;
+    private String accDepThisYear;
+    private String thisYearBookValue;
+
 
 }
