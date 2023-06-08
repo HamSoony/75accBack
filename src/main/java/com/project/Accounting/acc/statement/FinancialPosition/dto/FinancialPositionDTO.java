@@ -14,9 +14,9 @@ public class FinancialPositionDTO {
     private long periodNo;
     private String acctCode;
 
-    private long prebalancesummary;
+    private long preBalanceSummary;
 //
-    private long prebalancedetail;
+    private long preBalanceDetail;
 
 
 }

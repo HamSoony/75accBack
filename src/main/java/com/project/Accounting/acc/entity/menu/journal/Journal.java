@@ -1,10 +1,8 @@
 package com.project.Accounting.acc.entity.menu.journal;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.project.Accounting.acc.entity.menu.Slip;
 import jakarta.persistence.*;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
