@@ -2,6 +2,7 @@ package com.project.Accounting.acc.currentAsset.controller;
 
 import com.project.Accounting.acc.currentAsset.service.CurAssetService;
 import com.project.Accounting.acc.entity.menu.curAsset.CurAsset;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +11,7 @@ import java.util.List;
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/acc/currentAsset")
+@RequiredArgsConstructor
 public class CurAssetController {
 
     @Autowired
